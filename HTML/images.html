@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+</head>
+<body>
+    <img src="https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="no image" width="400px" height="300px">
+    <img src="./html_course#.png" alt="no image" width="400px" height="300px">
+
+    <picture>
+        <!-- ye device ke according media load kar rahae hai ham yaha par -->
+        <source media="(min-width: 650px)" srcset="./html_course1.png"/>
+        <source media="(min-width: 460px )" srcset="./html_course.png"/>
+        <img src="./html_course.png" alt="">
+    </picture>
+
+
+
+    <!-- image map generator -->
+<img src="html_course.png" usemap="#image-map">
+<map name="image-map">
+    <area onclick="one()" target="" alt="" title="" href="" coords="432,57,521,162" shape="rect">
+    <area onclick="one()" target="" alt="" title="" href="" coords="166,147,43,104" shape="0">
+</map>
+
+<script>
+    function one (){
+        alert("You clicke on one");
+    }
+
+    function one (){
+        alert("You clicke on two");
+    }
+</script>
+
+</body>
+</html>
