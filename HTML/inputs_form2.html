@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Two - Types of Input </title>
+    <style>
+        body{
+            background-color: #414141;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Input Elements in Forms in HTML</h1>
+    <form action="" method="GET" accept-charset="UTF-8" autocomplete="off" enctype="" novalidate>
+        <label for="fname">First Name </label>
+        <br>
+        <input type="text" placeholder="first name" id="fname" value="hemant">
+        <br>
+
+        <!-- input: 
+         do this and see various types of input-->
+        <input type="reset" value="reset">
+        <input type="password" name="" id="">
+        <input type="week" name="" id="">
+        <input type="email" name="" id="">
+
+
+        <select name="editors" id="" multiple>
+            <option value="vscode">vscode</option>
+            <option value="sublime">Sublime text</option>
+        </select>
+
+
+        <input list="editors" name="editor">
+        <datalist id="editors">
+            <option value="vscode">vscode</option>
+            <option value="sublime">sublime</option>
+        </datalist>
+
+        <input type="hidden" name="">
+
+
+        <!-- see more on mdn about input element -->
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+</html>
