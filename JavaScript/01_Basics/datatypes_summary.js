@@ -56,3 +56,32 @@ console.log(typeof id)
 // non - primitive data types ka typeof karne pe object hi aata hai 
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+// -------------------------------------------------
+
+
+//Memory
+
+//Stack (Primitive), Heap(non-primitive)
+
+// stack me copy milta hai jab kuch usme rakhte hai toh
+// and heap me uska reference milta hai 
+
+let myYoutubeName = "jaagoreaders"//this goes in stack 
+let anothername = myYoutubeName
+anothername="hemantnavlani"
+console.log(myYoutubeName)
+console.log(anothername)
+
+
+let userOne = {
+    email:"hemant@google.com",
+    upi:"hemant@ybl"
+}
+let userTwo = userOne
+
+userTwo.email="hemant@microsoft.com"
+
+console.log(userOne.email)
+console.log(userTwo.email)
