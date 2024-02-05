@@ -41,3 +41,35 @@ function loginUserMessage(username='sam'){//default value bhi de skte hai
 console.log(loginUserMessage("hemant"))
 
 console.log(loginUserMessage()) 
+
+
+
+function calculateCartPrice(val1,val2, ...num1){
+    return num1;
+}
+
+console.log(calculateCartPrice(2,400,2000,"1","cd",450));
+
+
+const user = {
+    username : "hemant",
+    price :"2121"
+}
+
+function handleObject(anyObj){
+    console.log(`Username is ${anyObj.username} and price is ${anyObj.price}`);
+}
+
+handleObject(user)
+handleObject({
+    username:"sma",
+    price:300
+})
+
+const mynewArray = [200,400,100,600]
+function returnSecondValue(getArray){
+    return getArray[1];
+}
+
+console.log(returnSecondValue(mynewArray));
+console.log(returnSecondValue([200,100,222,221]));
