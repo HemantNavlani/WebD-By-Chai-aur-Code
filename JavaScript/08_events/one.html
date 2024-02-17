@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <h2>Amazing Images </h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" style="height:135px;" id="owl"  >
+                <!-- onclick="alert('owl')" --> 
+                <!--ye is tarah html me hi event daalna acha approach nhi hai   -->
+                </li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl clicked ')
+    // }
+    // ye bhi jyada use nhi hota we should use event listeners as they provide facility of propogation
+
+
+
+    //yaha ek teesra parameter bhi hota hai but ye by default bhi false hota hai toh isko likhte bhi nhi hai most of the time
+
+    //ye best hai filhal
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert('owl clicked ')
+    // },false)
+
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log(e);
+    //     //ye e event object hota hai isme bht saari cheeze hoti hai 
+    //     //atleast know about these 
+    //     // type ,timestamp, defaulPrevented
+    //     //target, toElement , srcElement, currentTarget
+    //     //clientX, clientY , screenX, screenY
+    //     //altkey, ctrlkey, shiftkey, keyCode
+    // })
+
+
+    // ye phle hote tha 
+    //attachElment() 
+    //jQuery -> on  
+
+
+    //ye true false jo hota event ke sath vo help karta hai event propogation me -> event bubbling me (if false) and event capturing me (if true)
+
+    //Example
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('clicked inside the images ');
+    // },false)
+
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log('owl clicked');
+    //     //agar bubbling rokni hai toh ye karo 
+    //     e.stopPropagation()
+    // },false)
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log('clicked inside the images ');
+    // },true)
+
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log('owl clicked');
+    // },true)
+
+    //agar false dala toh Event bubbling means ki vo bottom to up jayega phle andar vala follow karega fir bahar vala
+    //agar true dala toh Event capturing means ki bahar se andar ki taraf jayega phle bhar vala krega fir anddar vala
+    //so use according to your usecase 
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     console.log('google clicked');
+    //     e.stopPropagation()
+    // },false)
+
+
+    //ab hame kuch aisa karna hai ki jis bhi image pe click kare vo delete hojaye 
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        // console.log(e.target.parentNode);
+        // let removeIt = e.target.parentNode;
+        // removeIt.remove();
+        //other way 
+        // removeIt.parentNode.removeChild(removeIt)//ye use hota tha mostly remove function is comparatively new 
+
+        //isme ye problem aa rahi hai kyunki hamne sabke upar event lagaya hai toh agar hamne li tag pe click kiya toh uska parent ul hamare paas aaya fir poora ul hi remove hogaya ek sath this is the problem  
+        //isko kahte hai event spillover 
+
+        console.log(e.target.tagName);
+
+        if (e.target.tagName==='IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
+    })
+</script>
+</html>
