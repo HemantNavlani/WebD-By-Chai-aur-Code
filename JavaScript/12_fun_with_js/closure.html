@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #212121;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+
+<script>
+
+        
+    // function init (){
+    //     let name = "Mozilla";
+    //     function displayName(){
+    //         console.log(name)
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // // yahi hai lexical scoping 
+    // // apne parent ki variables vagarah toh le skte hai par bhai vagarah ke nhi aur na hi bache ke variables parents le skte hai 
+    // function outer(){
+    //     let username = "hitesh"
+    //     // console.log(secret);//not allowed
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log("inner",username)
+    //     }
+    //     function innerTwo(){
+    //         console.log("innerTwo",username)
+    //         // console.log(secret)//not allowed
+    //     }
+    //     inner()
+    //     innerTwo()
+    // }
+    // outer()
+    // console.log("TOO Outer : ",username)
+
+
+
+    // function makeFunc(){
+    //     const name = "Mozilla"
+    //     function displayName(){
+    //         console.log(name)
+    //     }
+    //     // ye jo hum return kar rahe hai toh iska 
+    //     //matlab ye nhi hai ki khali iska execution
+    //     //  context ja raha balki iska poora ka poora 
+    //     // lexical scope uth ke ja raha hai 
+    //     return displayName;
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc()
+
+</script>
+
+
+<script>
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = "orange"
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = "green"
+    // }
+
+
+
+
+
+    
+    // Real world use of lexical scoping and closure 
+
+    function clickHandler (color){
+        //document.body.style.backgroundColor = `${color}`
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+</script>
+</html>
