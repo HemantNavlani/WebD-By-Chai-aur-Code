@@ -1,9 +1,13 @@
 import Chai from './chai'
 function App() {
+  const username = "Hemant"
   return (
     <>
     <Chai/>
-    <h1>Chai aur React </h1>
+    {/* JSX Curlies */}
+    <h1>Chai aur React {username} 
+    {/* This is an evaluated expression */}
+    </h1>
     <p>test para </p>
     </>
   )
