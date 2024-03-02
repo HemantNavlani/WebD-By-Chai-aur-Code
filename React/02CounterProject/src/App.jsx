@@ -12,6 +12,13 @@ function App() {
     // console.log("clicked",counter);
     // counter+=1;
     if (counter<20) setCounter(counter+1);
+
+    //React interview question
+    setCounter(prevCounter => prevCounter + 1)
+    setCounter(prevCounter => prevCounter + 1 )
+    setCounter(prevCounter => prevCounter + 1)
+    setCounter (prevCounter => prevCounter + 1)
+
   }
   const removeValue = ()=>{
     if (counter>0) setCounter(counter-1)
