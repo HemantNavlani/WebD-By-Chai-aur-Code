@@ -33,7 +33,7 @@ function App() {
     copyBtnRef.current.innerHTML = 'copied'
     copyBtnRef.current.style = 'background-color:green'
 
-    window.navigator.clipboard.writeText(password)
+    window.navigator.clipboard.writeText(password.substring(0,20));
   },[password])
 
 

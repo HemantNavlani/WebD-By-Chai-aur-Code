@@ -19,7 +19,22 @@
     const sayDate = function(str){
         console.log(str,Date.now());
     }
-    const intervalId = setInterval(sayDate,1000,"hi");
+    let intervalId;
+    const startTimer=()=>{
+        if (!intervalId) intervalId = setInterval(sayDate,1000,"hi");
+    }
+    const stopTimer=()=>{
+        clearInterval(intervalId);
+        intervalId=null;
+    }
+
+    const start = document.querySelector("#start");
+    start.addEventListener('click',startTimer);
+
+    const stop = document.querySelector("#stop");
+    stop.addEventListener('click',stopTimer);
+
+
     clearInterval(intervalId)
 </script>
 </html>

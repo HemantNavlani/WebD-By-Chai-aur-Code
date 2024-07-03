@@ -17,9 +17,9 @@ const user = {
 
 
 // function chai(){
-//     let username = "hemant"
-//     // console.log(this);
-//     console.log(this.username);//not accessible
+    // let username = "hemant"
+    // console.log(this);
+    // console.log(this.username);//not accessible
 // }
 
 // chai()
@@ -38,8 +38,7 @@ const chai =()=>{
     console.log(this.username);
     console.log(this);
 }
-// chai();
-
+chai();
 
 
 // const addTwo = (num1,num2)=>{

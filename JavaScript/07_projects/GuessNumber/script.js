@@ -1,5 +1,5 @@
 let randomNumber = parseInt(Math.random()*100+1)
-
+console.log(randomNumber);
 const userInput = document.querySelector('#guessField');
 const submit = document.querySelector('#subt');
 const lowOrHi = document.querySelector('.lowOrHi')
@@ -27,7 +27,7 @@ function validateGuess(guess){
     else {
         prevGuess.push(guess);
         displayGuess(guess)
-        checkGuess(guess);
+        if (checkGuess(guess)) return;
         if (numGuess>10){
             displayMessage(`Game Over !! Random Number was : ${randomNumber}`)
             endGame()
@@ -39,12 +39,15 @@ function checkGuess(guess){
     if (guess===randomNumber){
         displayMessage(`You Won Buddy !! You Guessed It Right :-)`)
         endGame();
+        return true;
     }
     else if (guess<randomNumber){
         displayMessage(`Your guess is TOOO LOW `);
+        return false;
     }
     else {
-        displayMessage(`Your guess is TOO HIGH `);
+        displayMessage(`Your guess is TOOO HIGH `);
+        return false;
     }
 }
 function displayGuess(guess){

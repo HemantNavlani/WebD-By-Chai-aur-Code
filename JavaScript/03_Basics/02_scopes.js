@@ -9,8 +9,7 @@
 
 // {//scope//}
 
-
-// var c = 300
+var c = 300
 let a = 300
 if (true){
     let a = 10;
@@ -58,7 +57,7 @@ function addone(num){
 console.log( addone(5))
 
 
-console.log(addTwo(5))//error
+// console.log(addTwo(5))//error
 const addTwo = function(num){
     return num+2
 }
